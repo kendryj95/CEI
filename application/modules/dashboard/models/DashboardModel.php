@@ -42,10 +42,12 @@ class DashboardModel extends CI_Model{
     }
 
     function obtenerRojos(){
-        $string = "SELECT *, DATEDIFF(fecha_limite,DATE(NOW())) AS alarma
-                    FROM `reporte_empresas`
-                    WHERE DATEDIFF(fecha_limite,DATE(NOW())) != 'NULL'
-                    AND DATEDIFF(fecha_limite,DATE(NOW())) < '20'";
+        $string = "SELECT re.*, DATEDIFF(re.fecha_limite,DATE(NOW())) AS alarma
+                    FROM `reporte_empresas` AS re 
+                    INNER JOIN empresas e ON e.id = re.id_empresa
+                    WHERE DATEDIFF(re.fecha_limite,DATE(NOW())) != 'NULL'
+                    AND DATEDIFF(re.fecha_limite,DATE(NOW())) < '20' 
+                    AND e.status = 1";
 
         $dbObject = $this->db->query($string);
 
