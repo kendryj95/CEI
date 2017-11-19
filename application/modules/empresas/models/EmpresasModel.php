@@ -32,12 +32,21 @@ class EmpresasModel extends CI_Model{
         }
     }
 
+    function crearBalanceGralEmpresa($idEmpresa){
+        $this->db->insert('balance_generale',array('id_empresa' => $idEmpresa));
+    }
+
 
     function guardarNuevoEmpresa($data){
 
         $this->db->trans_start();
 
         $this->db->insert('empresas',$data);
+        $idEmpresa = $this->db->insert_id();
+
+        if ($data['inversor'] == '0') { //Si la empresa es no inversora se inicializa el balance gral.
+            $this->crearBalanceGralEmpresa($idEmpresa);
+        }
 
         if($data['parent_id'] != '0'){
             $this->db->where('id',$data['parent_id']);
