@@ -68,13 +68,13 @@ class Dashboard extends MX_Controller{
 
                                     switch($row->descripcion){
                                         case '1':
-                                            $descripcion = "Ingreso";
+                                            $descripcion = "Devolución Préstamo (Ingreso)";
                                             break;
                                         case '2':
-                                            $descripcion = "Egreso";
+                                            $descripcion = "Devolución Préstamo (Egreso)";
                                             break;
                                         case '3':
-                                            $descripcion = "Devolución Préstamo";
+                                            $descripcion = "Ingreso Préstamo";
                                             break;
                                         case '4':
                                             $descripcion = "Préstamo";
