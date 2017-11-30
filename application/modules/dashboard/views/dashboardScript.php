@@ -19,7 +19,7 @@
             'bPaginate': true,
             "language": {
                 "lengthMenu": "Mostar _MENU_ registros por página",
-                "zeroRecords": "No Hay Resultados - Disculpe",
+                "zeroRecords": "No se encontraron registros",
                 "info": "Mostrando Página _PAGE_ de _PAGES_",
                 "infoEmpty": "No hay registros disponibles",
                 "infoFiltered": "(filtered from _MAX_ total records)",
