@@ -675,7 +675,7 @@ class ReporteEmpresa extends MX_Controller{
         $table = "<table class='table'>
     <thead>
     <tr>
-        <th>Favor</th>
+        <th>Dev. Préstamo (de ingreso) + Ingreso préstamo </th>
         <th>Fecha Emisión</th>
         <th>Saldo</th>
         <th width='20px'></th>
@@ -797,7 +797,7 @@ class ReporteEmpresa extends MX_Controller{
         $table = "<table class='table'>
     <thead>
     <tr>
-        <th>Contra</th>
+        <th>Dev. Préstamo  (de egreso) + Préstamo</th>
         <th>Fecha Emisión</th>
         <th>Saldo</th>
         <th width='20px'></th>
