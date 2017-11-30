@@ -72,7 +72,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h3>Articulos Legales</h3>
+                            <h3>Antecedentes Legales</h3>
                         </div>
                     </div>
                     <div class="row margin-5">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-12">
-                            <h3>Articulos Comerciales</h3>
+                            <h3>Antecedentes Comerciales</h3>
                         </div>
                     </div>
                     <div class="row margin-5">
@@ -177,7 +177,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h3>Articulos Legales</h3>
+                            <h3>Antecedentes Legales</h3>
                         </div>
                     </div>
                     <div class="row margin-5">
@@ -200,7 +200,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-12">
-                            <h3>Articulos Comerciales</h3>
+                            <h3>Antecedentes Comerciales</h3>
                         </div>
                     </div>
                     <div class="row margin-5">
@@ -298,7 +298,7 @@
                         <div class="col-md-12">
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Articulos Legales</h3>
+                                    <h3 class="box-title">Antecedentes Legales</h3>
 
                                     <div class="box-tools pull-right">
                                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -336,7 +336,7 @@
                         <div class="col-md-12">
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Articulos Comerciales</h3>
+                                    <h3 class="box-title">Antecedentes Comerciales</h3>
 
                                     <div class="box-tools pull-right">
                                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
