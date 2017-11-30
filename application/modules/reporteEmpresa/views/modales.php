@@ -16,9 +16,9 @@
                         Descripción
                         <select name="descripcion" id="descripcion" class="form-control" required>
                             <option value="" selected disabled>Escoja una descripción</option>
-                            <option value="1">Ingreso</option>
-                            <option value="2">Egreso</option>
-                            <option value="3">Devolución Préstamo</option>
+                            <option value="1">Devolución Préstamo (Ingreso)</option>
+                            <option value="2">Devolución Préstamo (Egreso)</option>
+                            <option value="3">Ingreso Préstamo</option>
                             <option value="4">Préstamo</option>
                         </select>
                     </div>
