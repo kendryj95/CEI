@@ -86,6 +86,11 @@
                     </a>
                 </li>
                 <li class="treeview">
+                    <a href="<?= base_url('resumenSaldo') ?>">
+                        <i class="fa fa-table"></i> <span>Resumen Saldo</span>  <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                </li>
+                <li class="treeview">
                     <a href="<?= base_url('reportePropiedades') ?>">
                         <i class="fa fa-book"></i> <span>Reporte de Propiedades</span>  <i class="fa fa-angle-left pull-right"></i>
                     </a>
