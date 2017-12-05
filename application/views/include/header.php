@@ -25,9 +25,11 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/datepicker3.css') ?>">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="<?= base_url('assets/css/daterangepicker-bs3.css') ?>">
+    <!-- Bootstrap Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
     <!-- Jquery UI Datatables -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/jquery.dataTables.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/buttons.bootstrap.min.css') ?>">
+    <!-- <link rel="stylesheet" href="<?//= base_url('assets/css/jquery.dataTables.min.css') ?>">
+    <link rel="stylesheet" href="<?//= base_url('assets/css/buttons.bootstrap.min.css') ?>"> -->
     <!-- My customs CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
     <!-- Sweet Alerts -->

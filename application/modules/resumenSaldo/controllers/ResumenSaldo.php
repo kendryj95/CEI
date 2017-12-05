@@ -29,7 +29,7 @@ class ResumenSaldo extends MX_Controller{
             $this->load->view('include/header',$header);
             $this->load->view('resumenSaldoView', $data);
             $this->load->view('include/footer');
-            //$this->load->view('dashboardScript');
+            $this->load->view('resumenSaldoScript');
         }else{
             redirect(base_url() , 'refresh');
         }
@@ -38,25 +38,71 @@ class ResumenSaldo extends MX_Controller{
 
     private function generarTabla($empresas){
         $html = '';
+        $idsEmpresasCol = array();
 
-        $html .= "<table class='table table-bordered'>";
+        $html .= "<table class='table tabla table-striped table-bordered table-hover'>";
 
-        $html .= "<tr><th style='background: #000'></th>";
+        $html .= "<thead>";
+
+        $html .= "<tr><th></th>";
 
         foreach ($empresas as $empresa) {
-            $html .= "<th colspan='2' style='background: grey; text-align: center'>".$empresa->empresa."</th>";
+            array_push($idsEmpresasCol, $empresa->id);
+            $html .= "<th colspan='2' style='text-align: center'>".$empresa->empresa." (".$empresa->id.")</th>";
         }
 
-        $html .= "</tr><tr><td style='background: #000'></td>";
+        $html .= "</tr><tr><td></td>";
 
         foreach ($empresas as $empresa) {
             $html .= "<td align='center' style='background: #D9D9D9'>FAVOR</td><td align='center' style='background: #D9D9D9'>CONTRA</td>";
         }
 
-        $html .= "</tr></table>";
+        $html .= "</tr></thead><tbody>";
+
+        foreach ($empresas as $empresa) {
+            $html .= "<tr><td style='text-align: center; font-weight: bold'>" . $empresa->empresa . " (".$empresa->id.")</td>";
+            for ($i=0; $i < count($idsEmpresasCol) ; $i++) { 
+                $favor = $this->getFavor($empresa->id, $idsEmpresasCol[$i]);
+                $html .= "<td>$favor</td>";
+                $contra = $this->getContra($empresa->id, $idsEmpresasCol[$i]);
+                #$html .= "<td>---</td>";
+                $html .= "<td>$contra</td>";
+            }
+            $html .= "</tr>";
+        }
+
+        $html .= "</tbody></table>";
 
         return $html;
 
+    }
+
+    private function getFavor($empOrigen, $empDestino){
+        $sumaFavor = 0;
+        $resultFavor = $this->model->obtenerResumenSaldoFavor($empOrigen, $empDestino);
+
+        if ($resultFavor) {
+            foreach ($resultFavor as $m) {
+                $sumaFavor += $m->monto;
+            }
+            return $sumaFavor;
+        } else {
+            return 0;
+        }
+    }
+
+    private function getContra($empOrigen, $empDestino){
+        $sumaContra = 0;
+        $resultContra = $this->model->obtenerResumenSaldoContra($empOrigen, $empDestino);
+
+        if ($resultContra) {
+            foreach ($resultContra as $m) {
+                $sumaContra += $m->monto;
+            }
+            return $sumaContra;
+        } else {
+            return 0;
+        }
     }
 
 } 
