@@ -28,7 +28,8 @@
                     "previous": "Anterior",
                     "next":"próximo"
                 }
-            }
+            },
+            "ordering": false
         });
     }
 

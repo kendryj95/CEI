@@ -23,6 +23,7 @@ class ResumenSaldo extends MX_Controller{
 
             $empresas = $this->model->obtenerEmpresasNoInversoras();
             $data['table'] = $this->generarTabla($empresas);
+            $data['detalles'] = $this->model->obtenerResumenSaldoContra(3,7);
 
             
 
@@ -63,10 +64,18 @@ class ResumenSaldo extends MX_Controller{
             $html .= "<tr><td style='text-align: center; font-weight: bold'>" . $empresa->empresa . " (".$empresa->id.")</td>";
             for ($i=0; $i < count($idsEmpresasCol) ; $i++) { 
                 $favor = $this->getFavor($empresa->id, $idsEmpresasCol[$i]);
-                $html .= "<td>$favor</td>";
+                if ($favor == 0) {
+                    $html .= "<td align='center'>".$favor."</td>";
+                }else {
+                    $html .= "<td align='center'><a href='javascript:void(0)' data-toggle='modal' data-target='#view-resumen-saldo' data-origen=''>".formato_salida($favor)."</a></td>";
+                }
                 $contra = $this->getContra($empresa->id, $idsEmpresasCol[$i]);
-                #$html .= "<td>---</td>";
-                $html .= "<td>$contra</td>";
+                if ($contra == 0) {
+                    $html .= "<td align='center'>".$contra."</td>";
+                }else {
+                    #$html .= "<td>---</td>";
+                    $html .= "<td align='center'><a href='javascript:void(0)' data-toggle='modal' data-target='#view-resumen-saldo' data-origen=''>".formato_salida($contra)."</a></td>";
+                }
             }
             $html .= "</tr>";
         }

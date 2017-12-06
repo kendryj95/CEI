@@ -51,6 +51,23 @@ class ResumenSaldoModel extends CI_Model{
             return false;
         }
     }
+    
+    function obtenerNombreEmpresa($idEmpresa){
+
+        if($idEmpresa != 'X'){
+            $this->db->where('id',$idEmpresa);
+            $result = $this->db->get('empresas');
+
+            if($result->num_rows() > 0)
+                return $result->row()->empresa;
+            else{
+                return '';
+            }
+        }else{
+            return 'TERCEROS..';
+        }
+
+    }
 
     
 }
