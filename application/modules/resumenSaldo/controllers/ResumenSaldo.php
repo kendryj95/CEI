@@ -23,9 +23,6 @@ class ResumenSaldo extends MX_Controller{
 
             $empresas = $this->model->obtenerEmpresasNoInversoras();
             $data['table'] = $this->generarTabla($empresas);
-            $data['detalles'] = $this->model->obtenerResumenSaldoContra(3,7);
-
-            
 
             $this->load->view('include/header',$header);
             $this->load->view('resumenSaldoView', $data);
@@ -70,7 +67,7 @@ class ResumenSaldo extends MX_Controller{
 
         foreach ($empresas as $empresa) {
             array_push($idsEmpresasCol, $empresa->id);
-            $html .= "<th colspan='2' style='text-align: center'>".$empresa->empresa." (".$empresa->id.")</th>";
+            $html .= "<th colspan='2' style='text-align: center'>".$empresa->empresa."</th>";
         }
 
         $html .= "</tr><tr class='encabezado'><td></td>";
@@ -82,7 +79,7 @@ class ResumenSaldo extends MX_Controller{
         $html .= "</tr></thead><tbody>";
 
         foreach ($empresas as $empresa) {
-            $html .= "<tr><td style='text-align: center; font-weight: bold'>" . $empresa->empresa . " (".$empresa->id.")</td>";
+            $html .= "<tr><td style='text-align: center; font-weight: bold'>" . $empresa->empresa ."</td>";
             for ($i=0; $i < count($idsEmpresasCol) ; $i++) { 
                 $favor = $this->getFavor($empresa->id, $idsEmpresasCol[$i]);
                 if ($favor == 0) {
