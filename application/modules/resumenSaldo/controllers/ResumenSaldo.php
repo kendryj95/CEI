@@ -23,6 +23,9 @@ class ResumenSaldo extends MX_Controller{
 
             $empresas = $this->model->obtenerEmpresasNoInversoras();
             $data['table'] = $this->generarTabla($empresas);
+            $data['detalles'] = $this->model->obtenerResumenSaldoContra(3,7);
+
+            
 
             $this->load->view('include/header',$header);
             $this->load->view('resumenSaldoView', $data);
