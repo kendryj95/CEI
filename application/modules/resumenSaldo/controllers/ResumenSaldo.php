@@ -60,6 +60,7 @@ class ResumenSaldo extends MX_Controller{
     private function generarTabla($empresas){
         $html = '';
         $idsEmpresasCol = array();
+        $totalFavorContra = array(); // inicializandolo
 
         $html .= "<table class='table tabla table-striped table-bordered table-hover'>";
 
@@ -72,7 +73,7 @@ class ResumenSaldo extends MX_Controller{
             $html .= "<th colspan='2' style='text-align: center'>".$empresa->empresa." (".$empresa->id.")</th>";
         }
 
-        $html .= "</tr><tr><td></td>";
+        $html .= "</tr><tr class='encabezado'><td></td>";
 
         foreach ($empresas as $empresa) {
             $html .= "<td align='center' style='background: #D9D9D9'>FAVOR</td><td align='center' style='background: #D9D9D9'>CONTRA</td>";
@@ -96,9 +97,49 @@ class ResumenSaldo extends MX_Controller{
                     #$html .= "<td>---</td>";
                     $html .= "<td align='center'><a class='detalleSaldo' href='#' data-toggle='modal' data-target='#view-resumen-saldo' data-op='2' data-origen='".$empresa->id."' data-destino='".$idsEmpresasCol[$i]."' nombre-origen='".$this->model->obtenerNombreEmpresa($empresa->id)."' nombre-destino='".$this->model->obtenerNombreEmpresa($idsEmpresasCol[$i])."'>".formato_salida($contra)."</a></td>";
                 }
+
+                if (!array_key_exists($i, $totalFavorContra)) { // Construyendo array para sumas total por columnas
+                    $totalFavorContra[$i]["favor"] = $favor;
+                    $totalFavorContra[$i]["contra"] = $contra;
+                } else {
+                    $totalFavorContra[$i]["favor"] += $favor;
+                    $totalFavorContra[$i]["contra"] += $contra;
+                }
+
             }
             $html .= "</tr>";
         }
+
+
+        $html .= "<tr class='total'><td align='center'><b>SUMA TOTAL</b></td>";
+        for ($i=0; $i < count($empresas); $i++) { // Haciendo ciclo para imprimir valores de suma total
+            if ($totalFavorContra[$i]["favor"] == 0) {
+                $html .= "<td align='center'>".$totalFavorContra[$i]["favor"]."</td>";
+            } else { 
+                $html .= "<td align='center'>".formato_salida($totalFavorContra[$i]["favor"])."</td>";
+            }
+            if ($totalFavorContra[$i]["contra"] == 0) {
+                $html .= "<td align='center'>".$totalFavorContra[$i]["contra"]."</td>";
+            } else {
+                $html .= "<td align='center'>".formato_salida($totalFavorContra[$i]["contra"])."</td>";
+            }
+        }
+
+        $html .= "</tr><tr>";
+
+        $html .= "<td align='center'><b>SALDO</b></td>";
+
+        for ($i=0; $i < count($empresas); $i++) { // Haciendo ciclo para imprimir valores de saldos
+            $saldo = $totalFavorContra[$i]["favor"] - $totalFavorContra[$i]["contra"];
+            if ($saldo == 0) {
+                $html .= "<td align='right'>".$saldo."</td><td></td>";
+            }else {
+                $html .= "<td align='right'>".formato_salida($saldo)."</td><td></td>";
+            }
+        }
+
+        $html .= "</tr>";
+
 
         $html .= "</tbody></table>";
 
