@@ -16,15 +16,6 @@
         </div>
 
     </div>
-<div>
-    <?php 
-
-        //print_r($detalles) 
-         echo $detalles[0]->origen;
-
-    ?>
-</div>
-
 </section>
 <!-- /.content -->
 
@@ -38,17 +29,12 @@
                 </div>
                 <div class="modal-body">
                     <table class="table table-striped">
-                        <thead>
+                        <thead class="bg-info">
                             <th>Transaccion</th>
                             <th>Monto</th>
                         </thead>
-                        <tbody>
-                            <div id="transacciones">
-                                
-                            </div>
-                            <tr>
-                                <td colspan="2"><b>Total:</b> <span id="total"></span></td>
-                            </tr>
+                        <tbody class="bodyTable">
+                            
                         </tbody>
                     </table>
                 </div>

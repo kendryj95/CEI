@@ -37,6 +37,26 @@ class ResumenSaldo extends MX_Controller{
 
     }
 
+    public function detallesSaldo(){
+
+        $detalles = '';
+        $json = '';
+
+        switch ($this->input->post('op')) {
+            case '1':
+                $detalles = $this->model->obtenerResumenSaldoFavor($this->input->post('origen'), $this->input->post('destino'));
+                break;
+            
+            case '2':
+                $detalles = $this->model->obtenerResumenSaldoContra($this->input->post('origen'), $this->input->post('destino'));
+                break;
+        }
+
+        $json = array('data' => $detalles);
+        
+        echo json_encode($json);
+    }
+
     private function generarTabla($empresas){
         $html = '';
         $idsEmpresasCol = array();
@@ -67,14 +87,14 @@ class ResumenSaldo extends MX_Controller{
                 if ($favor == 0) {
                     $html .= "<td align='center'>".$favor."</td>";
                 }else {
-                    $html .= "<td align='center'><a href='javascript:void(0)' data-toggle='modal' data-target='#view-resumen-saldo' data-origen=''>".formato_salida($favor)."</a></td>";
+                    $html .= "<td align='center'><a class='detalleSaldo' href='#' data-toggle='modal' data-target='#view-resumen-saldo' data-op='1' data-origen='".$empresa->id."' data-destino='".$idsEmpresasCol[$i]."' nombre-origen='".$this->model->obtenerNombreEmpresa($empresa->id)."' nombre-destino='".$this->model->obtenerNombreEmpresa($idsEmpresasCol[$i])."'>".formato_salida($favor)."</a></td>";
                 }
                 $contra = $this->getContra($empresa->id, $idsEmpresasCol[$i]);
                 if ($contra == 0) {
                     $html .= "<td align='center'>".$contra."</td>";
                 }else {
                     #$html .= "<td>---</td>";
-                    $html .= "<td align='center'><a href='javascript:void(0)' data-toggle='modal' data-target='#view-resumen-saldo' data-origen=''>".formato_salida($contra)."</a></td>";
+                    $html .= "<td align='center'><a class='detalleSaldo' href='#' data-toggle='modal' data-target='#view-resumen-saldo' data-op='2' data-origen='".$empresa->id."' data-destino='".$idsEmpresasCol[$i]."' nombre-origen='".$this->model->obtenerNombreEmpresa($empresa->id)."' nombre-destino='".$this->model->obtenerNombreEmpresa($idsEmpresasCol[$i])."'>".formato_salida($contra)."</a></td>";
                 }
             }
             $html .= "</tr>";
