@@ -22,6 +22,7 @@ class ResumenSaldo extends MX_Controller{
             $header['red']          = $this->generalModel->obtenerMenuRed();
 
             $empresas = $this->model->obtenerEmpresasNoInversoras();
+            $data['empresas'] = $empresas;
             $data['table'] = $this->generarTabla($empresas);
 
             $this->load->view('include/header',$header);
@@ -59,7 +60,7 @@ class ResumenSaldo extends MX_Controller{
         $idsEmpresasCol = array();
         $totalFavorContra = array(); // inicializandolo
 
-        $html .= "<table class='table tabla table-striped table-bordered table-hover'>";
+        $html .= "<table class='table tabla table-striped table-bordered table-hover' id='tablaResumen'>";
 
         $html .= "<thead>";
 
