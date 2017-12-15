@@ -1,103 +1,81 @@
 .content-wrapper {
-   background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
-
 .content-header {
-
     margin-bottom: 15px;
 }
-
 .panel-body {
     padding-top: 5px;
 }
-
-.row_documentos_asociados{
-   margin-bottom: 10px;
+.row_documentos_asociados {
+    margin-bottom: 10px;
 }
-
-.hoverTable tr:hover td  {
-   background-color: lightgray;
-   cursor: pointer;
+.hoverTable tr:hover td {
+    background-color: lightgray;
+    cursor: pointer;
 }
-
 .barrabordes {
-   border: 1px solid black;
+    border: 1px solid black;
 }
-
 .botontimeline {
-   padding-right: 50px;
-   text-align: right;
+    padding-right: 50px;
+    text-align: right;
 }
-
 .shadowsbox {
-   -webkit-box-shadow: -3px 4px 17px -2px rgba(0,0,0,0.75);
-   -moz-box-shadow: -3px 4px 17px -2px rgba(0,0,0,0.75);
-    box-shadow: -3px 4px 17px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -3px 4px 17px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 4px 17px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: -3px 4px 17px -2px rgba(0, 0, 0, 0.75);
 }
-
-.bottomright{
+.bottomright {
     position: absolute;
-    right:    0;
-    bottom:   0;
+    right: 0;
+    bottom: 0;
     padding-bottom: 60px;
     padding-right: 40px;
-    padding-top:  100px;
-    float:right;
+    padding-top: 100px;
+    float: right;
 }
-
 /*fix del scroll para multiples modales*/
+
 .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
-
 @media (max-width: 995px) {
-  .horizontalscroll {
-     overflow-x: auto;
-  }
+    .horizontalscroll {
+        overflow-x: auto;
+    }
 }
-
-.tablemarginbottom{
+.tablemarginbottom {
     margin-bottom: 200px;
 }
-
-.theadcolor{
+.theadcolor {
     background-color: #fafafa;
 }
-
-.centered{
-    float:left;
+.centered {
+    float: left;
     text-align: center;
     vertical-align: bottom;
 }
-
-.centeredlogo{
+.centeredlogo {
     padding-top: 22%;
 }
-
-.buttompaddin{
+.buttompaddin {
     padding-left: 0px;
 }
-.skin-red .main-header .logo,.skin-red .main-header .navbar, .btn-danger {
+.skin-red .main-header .logo, .skin-red .main-header .navbar, .btn-danger {
     background-color: #CE1126;
 }
-.bg-red{
-    background-color:#CE1126 !important;
+.bg-red {
+    background-color: #CE1126 !important;
 }
 .bg-olive {
     background-color: #636262 !important;
 }
-.pagination>.active>a,
-.pagination>.active>a:focus,
-.pagination>.active>a:hover,
-.pagination>.active>span,
-.pagination>.active>span:focus,
-.pagination>.active>span:hover {
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     background-color: #CE1126;
     border-color: #CE1129;
 }
-
 .datepickerformat {
     background: #fff;
     cursor: pointer;
@@ -106,19 +84,15 @@
     width: 100%;
     margin-bottom: 20px;
 }
-
 .datepickerpadding {
-   padding-top: 10px;
+    padding-top: 10px;
 }
-
-svg text{
-      font-size: 10px!important;
+svg text {
+    font-size: 10px!important;
 }
-
 .daterangepicker .ranges li {
     color: black;
 }
-
 .daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
     background: #CE1126;
     border: 1px solid #CE1126;
@@ -126,104 +100,90 @@ svg text{
 .daterangepicker td.in-range {
     background: #EBDADD;
 }
-
 .daterangepicker td.active, .daterangepicker td.active:hover {
     background-color: #CE1126;
     border-color: #CE1126;
 }
-
-.glyplicon-padd{
+.glyplicon-padd {
     padding-top: 10px;
 }
-
-.login-page{
-    background-size:     auto;                     
-    background-repeat:   no-repeat;
-    background-position:  top; 
+.login-page {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top;
 }
-
-.login-box-body{
-    border-radius: 5px;   
+.login-box-body {
+    border-radius: 5px;
 }
-
-
-.loginbtn{
+.loginbtn {
     width: 91.43%;
     margin-left: 4.2%;
 }
-
-.input-margin{
+.input-margin {
     margin: 10px;
 }
-
-.show-table{
+.show-table {
     display: table;
 }
-
-.login-alert{
+.login-alert {
     text-align: center;
     margin-bottom: 3px;
 }
-
-.displayNone{
+.displayNone {
     display: none;
 }
-
-canvas{
+canvas {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-
-.table-col-width{
+.table-col-width {
     width: 220px;
 }
-
-.calendar-margin{
+.calendar-margin {
     margin-left: 5px;
 }
-
-.supportbar{
+.supportbar {
     margin-left: 5px;
 }
-
-@media (max-width: 1100px){
-.specialmargin{
-    margin-bottom: 5px;
+@media (max-width: 1100px) {
+    .specialmargin {
+        margin-bottom: 5px;
+    }
 }
+@media (max-width: 1306px) {
+    .specialwidth {
+        width: 100%;
+    }
 }
-
-@media (max-width: 1306px){
-.specialwidth{
-    width:100%;
-}
-}
-
-.table-space-width{
+.table-space-width {
     width: 60px;
-    
 }
-
- .bigicon {
-        font-size: 35px;
-        color: #CE1126;
- }
- 
+.bigicon {
+    font-size: 35px;
+    color: #CE1126;
+}
 .progress {
     position: relative;
 }
-
 .progress span {
     position: absolute;
     display: block;
     width: 100%;
     color: black;
- }
-
-.fecha-limite-div{
+}
+.fecha-limite-div {
     display: none;
 }
-
-.margin-5{
+.margin-5 {
     margin: 5px;
+}
+.table-responsive>.fixed-column {
+    position: absolute;
+    display: inline-block;
+    width: 110px;
+    /*border-right: 1px solid #ddd;*/
+    background: #FFF;
+    overflow: hidden;
+    word-break: break-all;
 }

@@ -120,8 +120,6 @@
 
     $(document).ready(function() {
 
-        console.log("ready");
-
         $('.detalleSaldo').on('click', function(){
 
 
@@ -234,7 +232,7 @@
 
     //datatableInit();
 
-    var $tablaResumen = jQuery("#tablaResumen");
+    var $tablaResumen = jQuery(".tabla");
     /*var table = $tablaResumen.dataTable({
         "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         "aoColumnDefs": [
@@ -258,7 +256,7 @@
         },
 
     });*/
-    var tablaResumen = $tablaResumen.DataTable({
+    /*var tablaResumen = $tablaResumen.DataTable({
         "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         "aoColumnDefs": [
             { "width": "50px", "targets": 0 },
@@ -293,9 +291,9 @@
                 "sortDescending": ": activar para ordenar la columna descendente"
             }
         }
-    });
+    });*/
 
-    $('#tablaResumen_filter').hide(); // Forzando que desasparezca el campo de texto de filtro
+    /*$('#tablaResumen_filter').hide(); // Forzando que desasparezca el campo de texto de filtro
 
     $('#filterEmp').on('change', function(){
         let filtro = $(this);
@@ -305,11 +303,18 @@
         } else {
             tablaResumen.column(0).search(filtro.val()).draw();
         }
-    });
-
-
+    });*/
 
     });
+
+var $table = $('#tablaResumen');
+var $fixedColumn = $table.clone().insertBefore($table).addClass('fixed-column');
+
+$fixedColumn.find('tr').each(function (i, elem) {
+    $(this).height($table.find('tr:eq(' + i + ')').height());
+});
+
+$fixedColumn.find('th:not(:first-child),td:not(:first-child)').remove();
 
 
 

@@ -1,7 +1,5 @@
 <!-- Content Header (Page header) -->
 
-
-
 <!-- Main content -->
 
 <section class="content">
@@ -36,19 +34,19 @@
 
                         <div class="table-responsive">
 
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-12 col-sm-12 pull-left">
                                         <span class="label label-default">Filtrar por:</span>
                                         <label for="">
                                             <select name="" id="filterEmp" class="form-control input-sm">
                                                 <option value="">EMPRESA</option>
-                                                <?php foreach($empresas as $e): ?>
+                                                <?php// foreach($empresas as $e): ?>
                                                     <option value="<?= $e->empresa ?>"><?= $e->empresa ?></option>
-                                                <?php endforeach; ?>
+                                                <?php// endforeach; ?>
                                             </select>
                                         </label>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <?= $table ?>
 
