@@ -34,19 +34,22 @@
 
                         <div class="table-responsive">
 
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col-md-12 col-sm-12 pull-left">
-                                        <span class="label label-default">Filtrar por:</span>
-                                        <label for="">
-                                            <select name="" id="filterEmp" class="form-control input-sm">
-                                                <option value="">EMPRESA</option>
-                                                <?php// foreach($empresas as $e): ?>
-                                                    <option value="<?= $e->empresa ?>"><?= $e->empresa ?></option>
-                                                <?php// endforeach; ?>
-                                            </select>
-                                        </label>
+                                        <form action="<?= base_url() ?>resumenSaldo/perEmpresa" method="get">
+                                            <span class="label label-default">Filtrar por:</span>
+                                            <label for="">
+                                                <select name="emp" id="filterEmp" class="form-control input-sm">
+                                                    <option value="0">EMPRESA</option>
+                                                    <?php foreach($empresas as $e): ?>
+                                                        <option value="<?= $e->id ?>"><?= $e->empresa ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </label>
+                                            <input type="submit" value="Filtrar" class="btn btn-default btn-sm" style="">
+                                        </form>
                                 </div>
-                            </div> -->
+                            </div> 
 
                             <?= $table ?>
 

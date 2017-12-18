@@ -181,7 +181,7 @@ canvas {
 .table-responsive>.fixed-column {
     position: absolute;
     display: inline-block;
-    width: 110px;
+    width: 112px;
     /*border-right: 1px solid #ddd;*/
     background: #FFF;
     overflow: hidden;
